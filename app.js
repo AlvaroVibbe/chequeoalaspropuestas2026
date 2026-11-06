@@ -116,7 +116,7 @@ async function selectFilter(nextFilter) {
 
 function card(item) {
   const category = labelFor(item.status);
-  const image = item.coverImage ? `<img src="${esc(item.coverImage)}" alt="${esc(item.coverAlt || '')}" loading="lazy">` : `<div class="card-image-placeholder" aria-hidden="true"><span>CHEQUEA<br>LA PROMESA</span></div>`;
+  const image = item.coverImage ? `<img src="${esc(item.coverImage)}" alt="${esc(item.coverAlt || '')}" loading="lazy" decoding="async">` : `<div class="card-image-placeholder" aria-hidden="true"><span>CHEQUEA<br>LA PROMESA</span></div>`;
   const date = item.date ? `<time datetime="${esc(item.date)}">${esc(item.date)}</time>` : '';
   return `<article class="verification-card status-${category.id}"><a class="card-image" href="/verificaciones/${esc(item.id)}/" tabindex="-1" aria-hidden="true">${image}</a><div class="card-content"><span class="status-pill">${icon(category.icon)}<span>${category.label}</span></span><h3><a href="/verificaciones/${esc(item.id)}/">${esc(item.title)}</a></h3><div class="card-meta">${date}<a class="card-read" href="/verificaciones/${esc(item.id)}/">Leer verificación <span aria-hidden="true">↗</span></a></div></div></article>`;
 }

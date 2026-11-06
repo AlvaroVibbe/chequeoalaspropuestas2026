@@ -21,7 +21,7 @@ fetch('/verifications.json').then((response) => response.json()).then((items) =>
   }
   document.title = `${item.title} | ChequeaBolivia`;
   const status = categories[item.status];
-  const cover = item.coverImage ? `<figure class="article-cover"><img src="/${esc(item.coverImage).replace(/^\/+/, '')}" alt="${esc(item.coverAlt || '')}"></figure>` : '';
+  const cover = item.coverImage ? `<figure class="article-cover"><img src="/${esc(item.coverImage).replace(/^\/+/, '')}" alt="${esc(item.coverAlt || '')}" fetchpriority="high" decoding="async"></figure>` : '';
   const images = Array.isArray(item.images) ? item.images.map(imageFigure).join('') : '';
   root.innerHTML = `<article class="article"><header class="article-header"><p class="eyebrow"><a href="/#verificaciones">ESPECIAL · LAS PROMESAS BAJO LA LUPA</a></p><span class="status-pill status-${item.status}">${icon(item.status)}<span>${status.label}</span></span><h1>${esc(item.title)}</h1>${item.date ? `<time class="article-date" datetime="${esc(item.date)}">${esc(item.date)}</time>` : ''}</header>${cover}<div class="article-body">${item.bodyHtml || ''}${images}</div><nav class="article-pagination" aria-label="Navegación entre verificaciones"><a class="button-link" href="/#verificaciones"><span aria-hidden="true">←</span> Volver al listado general</a></nav></article>`;
   document.querySelectorAll('.article-body a').forEach((link) => { if (link.hostname !== location.hostname) { link.rel = 'noopener noreferrer'; link.target = '_blank'; } });

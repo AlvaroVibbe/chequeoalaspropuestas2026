@@ -24,7 +24,7 @@ Las 20 verificaciones están en `verifications.json`. Cada objeto contiene `titl
 
 Usa uno de estos valores para `status`: `cumplida`, `incumplida`, `demorada` o `adelantada`, y pon `published: true` para publicarla. El texto completo va en `bodyHtml`, con HTML sencillo como `<p>`, `<h2>`, `<strong>`, `<em>`, `<a>`, `<ul>` y `<ol>`.
 
-Los archivos de imagen de estos artículos se guardan en la raíz del repositorio con nombres como `verificacion-06-imagen-01.png`. La primera imagen puede usarse como portada y las demás pueden insertarse en `bodyHtml` mediante una figura con la clase `article-figure`; el sitio conserva sus proporciones y permite ampliarlas. También se admite el arreglo `images` para añadir imágenes al final del artículo.
+Los archivos de imagen de estos artículos se guardan en la raíz del repositorio con nombres como `verificacion-06-imagen-01.jpg`. Las portadas del especial se optimizaron a JPEG de calidad alta para reducir su peso sin cambiar sus dimensiones; las 20 imágenes principales pesan ahora cerca de 1,4 MB en conjunto. La primera imagen puede usarse como portada y las demás pueden insertarse en `bodyHtml` mediante una figura con la clase `article-figure`; el sitio conserva sus proporciones y permite ampliarlas. También se admite el arreglo `images` para añadir imágenes al final del artículo. Al compilar, solo se copian a `dist` las imágenes referenciadas por los datos.
 
 Usa `<h2>` para los subtítulos, `class="article-quote"` para destacar la cita de la promesa, y enlaces `<a href="…">`. Los subtítulos reciben un acento fucsia y los enlaces mantienen el color oficial fucsia.
 
@@ -32,7 +32,7 @@ Cada entrada conserva una URL como `/verificaciones/verificacion-01/`. `npm run 
 
 ## Portada e identidad
 
-El titular y subtítulo iniciales están en `index.html`. La portada actual es `portada-rodrigo-paz.webp`, optimizada para cargar rápido y precargada como imagen principal. El logotipo oficial está en `logo-chequeabolivia.png` y se usa en el encabezado y el pie. La paleta oficial está configurada al inicio de `styles.css`: fucsia `#BF1B68`, azul oscuro `#1E3E59` y verde `#69C2B6`.
+El titular y subtítulo iniciales están en `index.html`. La portada actual es `portada-rodrigo-paz.webp`, optimizada para cargar rápido y precargada como imagen principal. El logotipo oficial de la portada está en `logo-chequeabolivia.png`; en las páginas de las verificaciones se usa el archivo `logo-chequeabolivia-notas.png`, adjuntado por la redacción. La paleta oficial está configurada al inicio de `styles.css`: fucsia `#BF1B68`, azul oscuro `#1E3E59` y verde `#69C2B6`.
 
 Los textos de las cuatro definiciones se conservan como fueron entregados. El pie de página incluye solo el logotipo y el enlace para volver arriba.
 
