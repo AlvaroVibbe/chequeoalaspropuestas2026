@@ -32,7 +32,7 @@ Cada entrada conserva una URL como `/verificaciones/verificacion-01/`. `npm run 
 
 ## Portada e identidad
 
-El titular y subtítulo iniciales están en `index.html`. La portada actual es `portada-rodrigo-paz.webp`, optimizada para cargar rápido y precargada como imagen principal. El logotipo oficial de la portada está en `logo-chequeabolivia.png`; en las páginas de las verificaciones se usa el archivo `logo-chequeabolivia-notas.png`, adjuntado por la redacción. La paleta oficial está configurada al inicio de `styles.css`: fucsia `#BF1B68`, azul oscuro `#1E3E59` y verde `#69C2B6`.
+El titular y subtítulo iniciales están en `index.html`. La portada actual es `portada-rodrigo-paz.webp`, optimizada para cargar rápido y precargada como imagen principal. El logotipo oficial de la portada está en `logo-chequeabolivia.png`; en el encabezado de las verificaciones se usa `logo-chequeabolivia-notas.png`, adjuntado por la redacción. El pie usa la versión blanca del logotipo para mantener el contraste sobre el fondo azul. La paleta oficial está configurada al inicio de `styles.css`: fucsia `#BF1B68`, azul oscuro `#1E3E59` y verde `#69C2B6`.
 
 Los textos de las cuatro definiciones se conservan como fueron entregados. El pie de página incluye solo el logotipo y el enlace para volver arriba.
 
