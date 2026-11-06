@@ -14,7 +14,7 @@ for (const item of verifications) {
 await rm(out, { recursive: true, force: true });
 await mkdir(out, { recursive: true });
 for (const file of ['index.html', 'styles.css', 'app.js', 'article.js', 'verifications.json', 'portada-rodrigo-paz.webp', 'logo-chequeabolivia.png', 'logo-chequeabolivia-notas.png']) await cp(path.join(root, file), path.join(out, file));
-const usedImages = new Set(verifications.flatMap((item) => [item.coverImage, ...(Array.isArray(item.images) ? item.images.map((image) => image.src) : [])]).filter((file) => typeof file === 'string' && /^verificacion-\d{2}-imagen-\d{2}\.(?:png|jpe?g|webp|avif)$/i.test(file)));
+const usedImages = new Set(verifications.flatMap((item) => [item.coverImage, ...(Array.isArray(item.images) ? item.images.map((image) => image.src) : []), ...[...(item.bodyHtml || '').matchAll(/verificacion-\d{2}-imagen-\d{2}\.(?:png|jpe?g|webp|avif)/gi)].map(([file]) => file)]).filter((file) => typeof file === 'string' && /^verificacion-\d{2}-imagen-\d{2}\.(?:png|jpe?g|webp|avif)$/i.test(file)));
 for (const file of usedImages) await cp(path.join(root, file), path.join(out, file));
 try { await cp(path.join(root, 'images'), path.join(out, 'images'), { recursive: true }); } catch (error) { if (error.code !== 'ENOENT') throw error; }
 
